@@ -1,13 +1,224 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: hsl(185, 41%, 84%);
+  font-family: "Space Mono", monospace;
+}
+
+.app {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 52px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 9px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 17px;
+  color: hsl(183, 100%, 15%);
+  padding-top: 60px;
+}
+
+.tipcalculator {
+  display: flex;
+  justify-content: space-between;
+  background-color: hsl(0, 0%, 100%);
+  width: 650px;
+  height: 360px;
+  border-radius: 30px;
+  padding: 30px;
+  gap: 30px;
+  overflow: hidden;
+}
+
+.bill,
+.selected,
+.numofpeople {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  font-size: 12px;
+  color: hsl(186, 14%, 43%);
+  gap: 15px;
+}
+
+button {
+  width: 83px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(189, 41%, 97%);
+  font-size: 16px;
+  font-family: "Space Mono", monospace;
+  border: none;
+  border-radius: 5px;
+}
+
+button:focus {
+  background-color: hsl(172, 67%, 45%);
+  transition: all 200ms linear;
+}
+
+input {
+  background-color: hsl(189, 41%, 97%);
+  text-align: right;
+  border: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 5px;
+  width: 162%;
+  font-family: "Space Mono", monospace;
+}
+
+input:focus {
+  outline: none;
+  outline: 2px solid hsl(172, 67%, 45%);
+}
+
+input::placeholder{
+  text-align: center;
+  color: hsl(186, 14%, 43%);
+  font-size: 14px;
+}
+
+.calculatebill {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
+
+.select {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.reset {
+  width: 100%;
+  margin-top: auto;
+  background-color: hsla(186, 14%, 43%, 0.596);
+  color: hsl(183, 100%, 15%);
+}
+
+.revealamount {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: hsl(183, 100%, 15%);
+  width: 100%;
+  border-radius: 10px;
+  padding: 25px;
+  gap: 25px;
+  overflow: hidden;
+}
+
+.tipamount,
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: hsl(189, 41%, 97%);
+  font-size: 12px;
+}
+
+.person {
+  display: block;
+  font-size: 10px;
+  color: hsl(186, 14%, 43%);
+}
+
+.balance {
+  font-size: 35px;
+  color: hsl(172, 67%, 45%);
+}
+
+.custom {
+  width: 83px;
+}
+
+.radio{
+  width: 83px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(189, 41%, 97%);
+  font-size: 16px;
+  font-family: "Space Mono", monospace;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
+.radio:focus{
+  background-color: hsl(172, 67%, 45%);
+  transition: all 200ms linear;
+}
+
+.error{
+  outline: 2px solid rgba(255, 0, 0, 0.699);
+}
+
+.success{
+  background-color: hsl(172, 67%, 45%)
+}
+
+/*MOBILE PHONE */
+@media only screen and (max-width: 640px) {
+  body {
+    background-color: hsl(185, 41%, 84%);
+    font-family: "Space Mono", monospace;
+  }
+
+
+
+  .tipcalculator{
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 20px;
+  }
+
+  .select{
+    display: flex;
+    
+  
+  }
+
+  .calculatebill{
+    width: 100%;
+    
+    
+  }
+
+  .revealamount{
+    height: 300px;
+  }
+
+ .radio{
+  width: 90px;
+ }
+
+ .custom{
+  width: 90px;
+ }
 }
